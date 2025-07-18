@@ -6,8 +6,7 @@ import { PythagorasCal } from "../../function/pythagoras";
 import { TanInverse } from "../../function/tanInverse";
 import { useDispatch } from "react-redux";
 import { resetTriangle, setTriangles } from "../../rtk/triangle.slice";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../store";
+
 
 const FormWrapper = styled.div`
   max-width: 400px;
