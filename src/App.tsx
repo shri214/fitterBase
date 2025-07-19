@@ -3,10 +3,10 @@ import { Home } from "./components/home";
 import { DegreeCalculation } from "./components/degreeCalc/degreeCalculation";
 import { ElbowCenter } from "./components/elbowCenterFinder";
 import { ElbowDegreeCutter } from "./components/elbowDegreeCutting";
-import { Navbar } from "./components/Navbar";
 import { MitterTools } from "./components/mitterCutting";
 import { About } from "./components/About";
 import { Term } from "./components/Term";
+import { Navbar } from "./components/Navbar";
 
 export const App = () => {
   return (

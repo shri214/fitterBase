@@ -11,7 +11,7 @@ const initialState: ElbowState = {
     dimension: "2d",
     elbowSize: 0,
     unit: "mm",
-    degree: 0,
+    elbowDegree: 0,
   },
 };
 
