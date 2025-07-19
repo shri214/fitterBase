@@ -6,7 +6,7 @@ import { ElbowDegreeCutter } from "./components/elbowDegreeCutting";
 import { MitterTools } from "./components/mitterCutting";
 import { About } from "./components/About";
 import { Term } from "./components/Term";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/home/navbar";
 
 export const App = () => {
   return (
