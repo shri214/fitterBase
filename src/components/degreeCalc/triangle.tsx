@@ -2,12 +2,13 @@ import type { RootState } from "../../store";
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { GlobalStyle } from "../home/globalStyle";
 
 const DiagramContainer = styled.div`
   width: 100%;
   max-width: 400px;
   margin: auto;
-  padding: 1rem 0;
+  padding-top: 3rem;
 `;
 
 const Rectangle = styled.div`
@@ -37,37 +38,40 @@ export const TriangleDiagram: React.FC = () => {
     (state: RootState) => state.triangle
   );
   return (
-    <DiagramContainer>
-      <Rectangle>
-        <TriangleSVG viewBox="0 0 200 200">
-          {/* Replace styled.polygon with raw polygon + inline styles */}
-          <polygon
-            points="20,180 180,180 20,20"
-            fill="none"
-            stroke="#333"
-            strokeWidth="2"
-          />
+    <>
+      <GlobalStyle />
+      <DiagramContainer>
+        <Rectangle>
+          <TriangleSVG viewBox="0 0 200 200">
+            {/* Replace styled.polygon with raw polygon + inline styles */}
+            <polygon
+              points="20,180 180,180 20,20"
+              fill="none"
+              stroke="#333"
+              strokeWidth="2"
+            />
 
-          <Label x="80" y="195">
-            {sideA > 0 ? `a (${sideA})` : "a"}
-          </Label>
-          <Label x="10" y="100">
-            {sideB > 0 ? `b (${sideB})` : "b"}
-          </Label>
-          <Label x="95" y="95">
-            {sideC > 0 ? `c (${sideC})` : "c"}
-          </Label>
-          <Angle x="25" y="175">
-            ∠90
-          </Angle>
-          <Angle x="150" y="175">
-            ∠α
-          </Angle>
-          <Angle x="25" y="50">
-            ∠β
-          </Angle>
-        </TriangleSVG>
-      </Rectangle>
-    </DiagramContainer>
+            <Label x="80" y="195">
+              {sideA > 0 ? `a (${sideA})` : "a"}
+            </Label>
+            <Label x="10" y="100">
+              {sideB > 0 ? `b (${sideB})` : "b"}
+            </Label>
+            <Label x="95" y="95">
+              {sideC > 0 ? `c (${sideC})` : "c"}
+            </Label>
+            <Angle x="25" y="175">
+              ∠90
+            </Angle>
+            <Angle x="150" y="175">
+              ∠α
+            </Angle>
+            <Angle x="25" y="50">
+              ∠β
+            </Angle>
+          </TriangleSVG>
+        </Rectangle>
+      </DiagramContainer>
+    </>
   );
 };

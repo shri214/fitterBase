@@ -21,7 +21,8 @@ export type FormData = {
   dimension: "2d" | "3d";
   elbowSize: number;
   unit: string;
-  degree: number;
+  elbowDegree: number;
+  cutDegree?:number;
   center?:number;
   r1?:number;
   r2?:number;

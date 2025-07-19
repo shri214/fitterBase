@@ -18,7 +18,7 @@ export const ToolGrid: React.FC<ToolGridProps> = ({ tools, onToolClick }) => {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
 `;

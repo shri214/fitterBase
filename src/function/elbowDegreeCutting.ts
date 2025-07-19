@@ -2,7 +2,7 @@ import { getOuterDiameter } from "../datas/od";
 import type { FormData } from "../Interfaces/interface";
 
 export const calculateRadii = (formData: FormData ,center:number) => {
-  const { degree, unit, elbowSize } = formData;
+  const { cutDegree=0, unit, elbowSize } = formData;
 
   // Convert to nearest inch
   const sizeInInches =
@@ -11,14 +11,17 @@ export const calculateRadii = (formData: FormData ,center:number) => {
   try {
     const od = getOuterDiameter(sizeInInches);
 
+    
     const r1 = parseFloat(
-      (center * 2 - ((od * Math.PI) / 360) * degree).toFixed(2)
+      (((center * 2 * Math.PI) / 360) * cutDegree).toFixed(2)
     );
+
     const r2 = parseFloat(
-      (((center * 2 * Math.PI) / 360) * degree).toFixed(2)
+      (center * 2 - ((od * Math.PI) / 360) * cutDegree).toFixed(2)
     );
+
     const r3 = parseFloat(
-      (center * 2 + ((od * Math.PI) / 360) * degree).toFixed(2)
+      (center * 2 + ((od * Math.PI) / 360) * cutDegree).toFixed(2)
     );
 
     return { r1, r2, r3 };
