@@ -18,6 +18,7 @@ import {
 import { elbowCenter } from "../../function/elbowCenter";
 import { calculateRadii } from "../../function/elbowDegreeCutting";
 import { GlobalStyle } from "../home/globalStyle";
+import { toast } from "react-toastify";
 
 export const ElbowDegreeCutter: React.FC = () => {
   const [selectedType, setSelectedType] = useState<"standard" | "long">(
@@ -34,6 +35,18 @@ export const ElbowDegreeCutter: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (elbowSize <= 0 || elbowDegree <= 0 || cutDegree <= 0) {
+      toast.warn(
+        `${[
+          elbowSize === 0 ? "elbow size" : "",
+          elbowDegree === 0 ? "elbow degree" : "",
+          cutDegree === 0 ? "cut degree" : "",
+        ]
+          .filter(Boolean)
+          .join(", ")} can't be 0`
+      );
+      return;
+    }
     const formData = {
       type: selectedType,
       dimension: selectedType === "long" ? dimension : "2d",

@@ -15,7 +15,7 @@ const tools = [
   },
   {
     slug: "multi-mitter",
-    name: "Mitter Calculator",
+    name: "Multi Mitter Calculator",
     icon: mitter,
   },
   
@@ -25,7 +25,7 @@ export const MitterTool: React.FC = () => {
   const navigation = useNavigate();
   const handleToolClick = (slug: string) => {
     console.log(`Tool clicked: ${slug}`);
-    navigation(`tool/${slug}`);
+    navigation(`${slug}`);
   };
 
   return (

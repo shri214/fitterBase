@@ -6,6 +6,7 @@ import { PythagorasCal } from "../../function/pythagoras";
 import { TanInverse } from "../../function/tanInverse";
 import { useDispatch } from "react-redux";
 import { resetTriangle, setTriangles } from "../../rtk/triangle.slice";
+import { toast } from "react-toastify";
 
 
 const FormWrapper = styled.div`
@@ -97,7 +98,7 @@ export const TriangleInputForm: React.FC = () => {
       triangles.sideC,
     ].filter((s) => s > 0).length;
     if (filledSides < 2) {
-      alert("fill any two side");
+      toast.warn("fill any two side");
       return;
     }
     if (
@@ -106,7 +107,7 @@ export const TriangleInputForm: React.FC = () => {
     ) {
       const greaterSide =
         triangles.sideA > triangles.sideB ? "Side A" : "Side B";
-      alert(`Side C can't be less than ${greaterSide}`);
+      toast.warn(`Side C can't be less than ${greaterSide}`);
       setTriangle((prev: TriangleInput) => ({
         ...prev,
         sideC: 0,
@@ -121,7 +122,7 @@ export const TriangleInputForm: React.FC = () => {
     ) {
       let result = PythagorasCal(triangles);
       if (typeof result === "string") {
-        alert("please c must be greater than both side ");
+        toast.warn("please c must be greater than both side ");
       } else {
         result = TanInverse(result);
         dispatch(setTriangles(result));
@@ -147,7 +148,7 @@ export const TriangleInputForm: React.FC = () => {
           type="number"
           name="sideA"
           placeholder="Side A"
-          value={triangle.sideA}
+          value={isNaN(triangle.sideA)?"":triangle.sideA}
           onChange={handleChange}
         />
       </InputGroup>
@@ -157,7 +158,7 @@ export const TriangleInputForm: React.FC = () => {
           type="number"
           name="sideB"
           placeholder="Side B"
-          value={triangle.sideB}
+          value={isNaN(triangle.sideB)?"":triangle.sideB}
           onChange={handleChange}
         />
       </InputGroup>
@@ -167,7 +168,7 @@ export const TriangleInputForm: React.FC = () => {
           type="number"
           name="sideC"
           placeholder="Side C"
-          value={triangle.sideC}
+          value={isNaN(triangle.sideC)?"":triangle.sideC}
           onChange={handleChange}
         />
       </InputGroup>
@@ -179,6 +180,7 @@ export const TriangleInputForm: React.FC = () => {
           placeholder="Angle ∠α"
           value={triangle.angleAlpha}
           onChange={handleChange}
+          disabled
         />
       </InputGroup>
       <InputGroup>
@@ -189,6 +191,7 @@ export const TriangleInputForm: React.FC = () => {
           placeholder="Angle ∠β"
           value={triangle.angleBeta}
           onChange={handleChange}
+          disabled
         />
       </InputGroup>
       <Button

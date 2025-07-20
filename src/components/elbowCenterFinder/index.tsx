@@ -7,6 +7,7 @@ import elbowCenterImage from "../../assets/elbow center image.png";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
 import { GlobalStyle } from "../home/globalStyle";
+import { toast } from "react-toastify";
 
 export const Container = styled.section`
   max-width: 480px;
@@ -71,6 +72,7 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
+  margin-right: 10px;
 
   &:hover {
     background-color: #005fa3;
@@ -120,6 +122,12 @@ export const ElbowCenter: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (elbowSize <= 0 || elbowDegree <= 0) {
+      toast.warn(
+        `${elbowSize === 0 ? "elbow size" : "elbow degree"} can't be 0 `
+      );
+      return ;
+    }
     const formData = {
       type: selectedType,
       dimension: selectedType === "long" ? dimension : "2d",

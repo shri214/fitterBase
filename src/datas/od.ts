@@ -25,5 +25,5 @@ export const getOuterDiameter = (elbowSize: number): number => {
     return elbowSize * 25.4;
   }
 
-  throw new Error(`Unsupported elbow size: ${elbowSize}`);
+  throw new Error(`Unsupported size: ${elbowSize}`);
 };
