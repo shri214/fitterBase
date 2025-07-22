@@ -136,7 +136,7 @@ export const EqualBranch: React.FC = () => {
       </ImageContainer>
 
       <CheckboxGroup role="group" aria-labelledby="type-label">
-        <label id="type-label">Select Pipe Type:</label>
+        <label id="type-label">Select Formula Type:</label>
         <CheckboxLabel>
           <input
             type="checkbox"
