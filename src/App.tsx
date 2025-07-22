@@ -10,6 +10,8 @@ import { Navbar } from "./components/home/navbar";
 import { SingleMitter } from "./components/mitterCutting/singleMitter";
 import { ToastContainer } from "react-toastify";
 import { MultiMiter } from "./components/mitterCutting/multiMitter";
+import { Branch } from "./components/branchCutting/branch";
+import { EqualBranch } from "./components/branchCutting/equalBranch";
 
 export const App = () => {
   return (
@@ -44,6 +46,11 @@ export const App = () => {
         <Route
           path="/tool/mitter-tools/multi-mitter"
           element={<MultiMiter />}
+        />
+        <Route path="/tool/branch-calculator" element={<Branch />} />
+        <Route
+          path="/tool/branch-calculator/equal-branch"
+          element={<EqualBranch />}
         />
       </Routes>
     </>

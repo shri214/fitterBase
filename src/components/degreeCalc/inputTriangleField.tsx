@@ -9,7 +9,7 @@ import { resetTriangle, setTriangles } from "../../rtk/triangle.slice";
 import { toast } from "react-toastify";
 
 
-const FormWrapper = styled.div`
+export const FormWrapper = styled.div`
   max-width: 400px;
   margin: auto;
   padding: 1rem;
@@ -21,17 +21,17 @@ const FormWrapper = styled.div`
     padding: 0.5rem;
   }
 `;
-const InputGroup = styled.div`
+export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   font-size: 1rem;
   margin-bottom: 0.25rem;
   color: #333;
 `;
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   padding: 0.6rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -43,7 +43,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const Heading = styled.h3`
+export const Heading = styled.h3`
   text-align: center;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;

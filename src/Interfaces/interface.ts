@@ -8,7 +8,7 @@ export interface TriangleInput {
 export interface ToolItem {
   slug: string;
   name: string;
-  icon?: string; 
+  icon?: string;
 }
 
 export interface ToolGridProps {
@@ -22,13 +22,28 @@ export type FormData = {
   elbowSize: number;
   unit: string;
   elbowDegree: number;
-  cutDegree?:number;
-  center?:number;
-  r1?:number;
-  r2?:number;
-  r3?:number;
+  cutDegree?: number;
+  center?: number;
+  r1?: number;
+  r2?: number;
+  r3?: number;
 };
 
 export interface ElbowState {
   data: FormData;
 }
+
+export interface IBranch {
+  branchOd: number;
+  HeaderOd: number;
+}
+
+ export interface IEqualRes {
+  cl: string;
+  "90.00"?: number;
+  "67.50"?: number;
+  "45.00"?: number;
+  "22.50"?: number;
+  [key: string]: number | string | undefined; 
+}
+

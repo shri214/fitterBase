@@ -102,24 +102,27 @@ export const MultiMiter: React.FC = () => {
     };
     const { longCut, cutBack } = calculateMitterCuts(values);
     setResult({ cutBack, longCut });
-    console.log("Submitted values:", result);
-    // TODO: Replace this with your calculation logic
+   
   };
 
   return (
     <>
       <GlobalStyle />
       <PageWrapper>
-        <Heading>Multi Miter Calculator</Heading>
+        <Heading>Multi Cut Miter Calculator</Heading>
+        <p>Marking should be in 8 CL</p>
         <ImageContainer>
           <StyledImage src={multiMitterDiagram} alt="multi mitter" />
           {result.cutBack > 0 && result.longCut > 0 && (
             <InfoBox>
               <p>
-                side Pice <strong>{result.cutBack} mm</strong>
+                cutBack <strong>{result.cutBack} mm</strong>
               </p>
               <p>
-                middle pice <strong>{result.longCut / 2}mm</strong>
+                side Pice <strong>{result.longCut/2} mm</strong>
+              </p>
+              <p>
+                middle pice <strong>{result.longCut}mm</strong>
               </p>
             </InfoBox>
           )}
