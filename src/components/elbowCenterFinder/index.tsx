@@ -16,6 +16,9 @@ export const Container = styled.section`
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
+  @media (max-width: 768px) {
+    max-width: 400px;
+  }
 `;
 
 export const Heading = styled.h1`
@@ -126,7 +129,7 @@ export const ElbowCenter: React.FC = () => {
       toast.warn(
         `${elbowSize === 0 ? "elbow size" : "elbow degree"} can't be 0 `
       );
-      return ;
+      return;
     }
     const formData = {
       type: selectedType,

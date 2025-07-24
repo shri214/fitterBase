@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 
 
 export const FormWrapper = styled.div`
-  max-width: 400px;
+  // max-width: 400px;
   margin: auto;
   padding: 1rem;
   display: flex;
