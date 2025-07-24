@@ -10,7 +10,7 @@ import { GlobalStyle } from "../home/globalStyle";
 import { toast } from "react-toastify";
 
 export const Container = styled.section`
-  max-width: 480px;
+  max-width: 60%;
   margin: 2rem auto;
   padding: 1rem;
   border-radius: 12px;
@@ -101,7 +101,7 @@ export const InfoBox = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  max-width: 100%;
+  max-width: 60%;
   height: auto;
   object-fit: contain;
 `;

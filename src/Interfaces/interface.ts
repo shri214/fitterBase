@@ -38,12 +38,15 @@ export interface IBranch {
   HeaderOd: number;
 }
 
- export interface IEqualRes {
+export interface IEqualRes {
   cl: string;
-  "90.00"?: number;
-  "67.50"?: number;
-  "45.00"?: number;
   "22.50"?: number;
-  [key: string]: number | string | undefined; 
+  "45.00"?: number;
+  "67.50"?: number;
+  "90.00"?: number;
+  "112.50"?: number;
+  "135.00"?: number;
+  "157.50"?: number;
+  "180.00"?: number;
+  [key: string]: number | string | undefined;
 }
-

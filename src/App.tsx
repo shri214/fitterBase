@@ -13,6 +13,7 @@ import { MultiMiter } from "./components/mitterCutting/multiMitter";
 import { Branch } from "./components/branchCutting/branch";
 import { EqualBranch } from "./components/branchCutting/equalBranch";
 import { UnEqualBranch } from "./components/branchCutting/unequalBranch";
+import { LateralBranch } from "./components/branchCutting/lateralBranch";
 
 export const App = () => {
   return (
@@ -56,6 +57,14 @@ export const App = () => {
         <Route
           path="/tool/branch-calculator/unequal-branch"
           element={<UnEqualBranch />}
+        />
+        <Route
+          path="/tool/branch-calculator/:type"
+          element={<LateralBranch />}
+        />
+        <Route
+          path="/tool/branch-calculator/:type"
+          element={<LateralBranch />}
         />
       </Routes>
     </>

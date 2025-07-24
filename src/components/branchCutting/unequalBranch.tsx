@@ -24,7 +24,7 @@ import { toast } from "react-toastify";
 import { calculateEqualBranch } from "../../function/equalBranch";
 
 // Styled Select
-const StyledSelect = styled.select`
+export const StyledSelect = styled.select`
   padding: 8px;
   font-size: 1rem;
   margin-top: 5px;
