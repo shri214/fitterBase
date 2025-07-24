@@ -19,7 +19,7 @@ import {
   StyledImage,
 } from "../elbowCenterFinder";
 
-import equalBranchImg from "../../assets/equal branch.png";
+import unequalBranchImg from "../../assets/unequal branch.png";
 import { toast } from "react-toastify";
 import { calculateEqualBranch } from "../../function/equalBranch";
 
@@ -30,15 +30,15 @@ const StyledSelect = styled.select`
   margin-top: 5px;
 `;
 
-export const EqualBranch: React.FC = () => {
+export const UnEqualBranch: React.FC = () => {
   const [Branch, setBranch] = useState<IBranch>({
     branchOd: 0,
     HeaderOd: 0,
   });
 
-  const [selectedType, setSelectedType] = useState<"oldFormula" | "newFormula">(
-    "oldFormula"
-  );
+  const [selectedType, setSelectedType] = useState<
+    "unEqlOldFormula" | "unEqlNewFormula"
+  >("unEqlOldFormula");
   const [result, setResult] = useState<IEqualRes | null>({
     cl: "",
   });
@@ -69,16 +69,19 @@ export const EqualBranch: React.FC = () => {
     selectedType: string,
     Branch: IBranch
   ): boolean => {
-    if (selectedType === "oldFormula" && Branch.branchOd <= 0) {
-      toast("Branch OD must be greater than 0 ");
+    if (selectedType === "unEqlOldFormula") {
+      if (Branch.HeaderOd <= 0 || Branch.branchOd <= 0) {
+        toast("Both Header OD and Branch Od must be greater than 0 ");
+        return false;
+      }
+    }
+    if (Branch.HeaderOd === Branch.branchOd) {
+      toast("Both OD can't be same 😊");
       return false;
     }
-
-    if (selectedType === "newFormula") {
+    if (selectedType === "unEqlNewFormula") {
       if (Branch.HeaderOd <= 0 || Branch.branchOd <= 0) {
-        toast(
-          "Both Header OD and Branch OD must be greater than 0 "
-        );
+        toast("Both Header OD and Branch OD must be greater than 0 ");
         return false;
       }
 
@@ -88,7 +91,7 @@ export const EqualBranch: React.FC = () => {
       }
     }
 
-    return true; // valid
+    return true; 
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -106,10 +109,10 @@ export const EqualBranch: React.FC = () => {
   return (
     <Container>
       <GlobalStyle />
-      <Heading style={{ marginTop: "2em" }}>Equal Branch Calculator</Heading>
+      <Heading style={{ marginTop: "2em" }}>Un-Equal Branch Calculator</Heading>
 
       <ImageContainer>
-        <StyledImage src={equalBranchImg} alt="equal branch" />
+        <StyledImage src={unequalBranchImg} alt="equal branch" />
         {result?.cl && (
           <InfoBox>
             <p>
@@ -140,47 +143,45 @@ export const EqualBranch: React.FC = () => {
         <CheckboxLabel>
           <input
             type="checkbox"
-            checked={selectedType === "oldFormula"}
-            onChange={() => setSelectedType("oldFormula")}
+            checked={selectedType === "unEqlOldFormula"}
+            onChange={() => setSelectedType("unEqlOldFormula")}
           />
-          OD*2/5
+          Branch OD * Branch OD / Header OD *4{" "}
         </CheckboxLabel>
         <CheckboxLabel>
           <input
             type="checkbox"
-            checked={selectedType === "newFormula"}
-            onChange={() => setSelectedType("newFormula")}
+            checked={selectedType === "unEqlNewFormula"}
+            onChange={() => setSelectedType("unEqlNewFormula")}
           />
           Header Half OD – √(Header Half OD² – ( Sin(∅) × Branch Half ID)²)
         </CheckboxLabel>
       </CheckboxGroup>
       <FormWrapper>
-        {selectedType === "newFormula" && (
-          <InputGroup>
-            <Label htmlFor="HeaderOd">Header OD</Label>
-            <StyledInput
-              type="number"
-              name="HeaderOd"
-              step="any"
-              placeholder="Enter Header OD"
-              value={isNaN(Branch.HeaderOd) ? "" : Branch.HeaderOd}
-              onChange={handleInputChange}
-              min="0"
-              required
-            />
-          </InputGroup>
-        )}
+        <InputGroup>
+          <Label htmlFor="HeaderOd">Header OD</Label>
+          <StyledInput
+            type="number"
+            name="HeaderOd"
+            step="any"
+            placeholder="Enter Header OD"
+            value={isNaN(Branch.HeaderOd) ? "" : Branch.HeaderOd}
+            onChange={handleInputChange}
+            min="0"
+            required
+          />
+        </InputGroup>
 
         <InputGroup>
           <Label htmlFor="branchOd">
-            {selectedType === "oldFormula" ? "OD" : "Branch ID"}
+            {selectedType === "unEqlOldFormula" ? "Branch OD" : "Branch ID"}
           </Label>
           <StyledInput
             type="number"
             name="branchOd"
             step="any"
             placeholder={
-              selectedType === "oldFormula"
+              selectedType === "unEqlOldFormula"
                 ? "Enter Branch OD"
                 : " Enter Branch ID"
             }

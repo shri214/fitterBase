@@ -12,6 +12,7 @@ import { ToastContainer } from "react-toastify";
 import { MultiMiter } from "./components/mitterCutting/multiMitter";
 import { Branch } from "./components/branchCutting/branch";
 import { EqualBranch } from "./components/branchCutting/equalBranch";
+import { UnEqualBranch } from "./components/branchCutting/unequalBranch";
 
 export const App = () => {
   return (
@@ -51,6 +52,10 @@ export const App = () => {
         <Route
           path="/tool/branch-calculator/equal-branch"
           element={<EqualBranch />}
+        />
+        <Route
+          path="/tool/branch-calculator/unequal-branch"
+          element={<UnEqualBranch />}
         />
       </Routes>
     </>

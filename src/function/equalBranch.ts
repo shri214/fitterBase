@@ -15,7 +15,6 @@ export const calculateEqualBranch = (
     }
     currentAngle += angleStep;
   }
-
   const response: IEqualRes = {
     cl: String(centerLine),
     "45.00": 0,
@@ -35,16 +34,34 @@ export const calculateEqualBranch = (
     });
 
     return response;
-  } else if (selectedType === "newFormula") {
+  } else if (
+    selectedType === "newFormula" ||
+    selectedType === "unEqlNewFormula"
+  ) {
     const headerHalfOD = branch.HeaderOd / 2;
     const branchHalfID = branch.branchOd / 2;
 
-    
     angles.forEach((deg) => {
       const rad = (deg * Math.PI) / 180;
       const sinComponent = Math.sin(rad) * branchHalfID;
       const underRoot = headerHalfOD ** 2 - sinComponent ** 2;
       const value = Number((headerHalfOD - Math.sqrt(underRoot)).toFixed(2));
+      const key = deg.toFixed(2);
+      if (["22.50", "45.00", "67.50", "90.00"].includes(key)) {
+        response[key] = value;
+      }
+    });
+
+    return response;
+  } else if (selectedType === "unEqlOldFormula") {
+    const headerOD = branch.HeaderOd;
+    const branchOD = branch.branchOd;
+
+    const result = (branchOD * branchOD) / (headerOD * 4);
+
+    angles.forEach((deg) => {
+      const rad = (deg * Math.PI) / 180;
+      const value = Number((Math.sin(rad) * result).toFixed(2));
       const key = deg.toFixed(2);
       if (["22.50", "45.00", "67.50", "90.00"].includes(key)) {
         response[key] = value;
