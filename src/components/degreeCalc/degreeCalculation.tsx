@@ -7,7 +7,7 @@ export const DegreeCalculation: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Degree Calculation Tool | FitterBase</title>
+        <title>Degree Calculator | fitter-base</title>
         <meta
           name="description"
           content="Calculate pipe bend degrees accurately using our free fitter calculator. Ideal for field professionals and technical use."
@@ -19,6 +19,8 @@ export const DegreeCalculation: React.FC = () => {
           content="Free and accurate degree calculator for pipe bending offset and fitter jobs."
         />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://fitter-base.vercel.app/tool/degree-calculator" />
+
       </Helmet>
       <main>
         <TriangleDiagram />

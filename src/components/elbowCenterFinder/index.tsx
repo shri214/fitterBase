@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
 import { GlobalStyle } from "../home/globalStyle";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 export const Container = styled.section`
   max-width: 60%;
@@ -144,11 +145,25 @@ export const ElbowCenter: React.FC = () => {
 
   return (
     <>
+    <Helmet>
+  <title>Elbow Center Calculator | Pipe Fitting Offset Tool - fitter-base</title>
+  <meta
+    name="description"
+    content="Calculate pipe elbow center length easily. Supports 2D & 3D dimensions, standard and long radius elbows in inches or mm."
+  />
+  <meta
+    name="keywords"
+    content="elbow center calculator, pipe fitting tools, long radius elbow, 2D elbow, 3D elbow, fabrication tools"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fitter-base.vercel.app/tool/elbow-center-calculator" />
+</Helmet>
+
       <GlobalStyle />
       <Container>
         <Heading>Elbow center calculator</Heading>
         <ImageContainer>
-          <StyledImage src={elbowCenterImage} alt="elbow center" />
+          <StyledImage src={elbowCenterImage} alt="elbow center" loading="lazy"/>
           {center && (
             <InfoBox>
               <p>

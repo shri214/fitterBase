@@ -19,6 +19,7 @@ import { elbowCenter } from "../../function/elbowCenter";
 import { calculateRadii } from "../../function/elbowDegreeCutting";
 import { GlobalStyle } from "../home/globalStyle";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 export const ElbowDegreeCutter: React.FC = () => {
   const [selectedType, setSelectedType] = useState<"standard" | "long">(
@@ -68,11 +69,25 @@ export const ElbowDegreeCutter: React.FC = () => {
 
   return (
     <>
+    <Helmet>
+  <title>Elbow Degree Cutting Calculator | Pipe Fitting Tool - fitter-base</title>
+  <meta
+    name="description"
+    content="Calculate individual cut lengths (R1, R2, R3) for any pipe elbow using our accurate fitter tool. Supports 2D/3D, long/standard elbows."
+  />
+  <meta
+    name="keywords"
+    content="elbow cutting calculator, pipe cut degree, elbow degree tool, R1 R2 R3 calculator, 3-cut elbow"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://fitter-base.vercel.app/tool/elbow-degree-calculator" />
+</Helmet>
+
       <GlobalStyle />
       <Container>
         <Heading>Elbow Degree cutting calculator</Heading>
         <ImageContainer>
-          <StyledImage src={elbowDegreeImage} alt="elbow center" />
+          <StyledImage src={elbowDegreeImage} alt="elbow center" loading="lazy"/>
           {r1 && (
             <InfoBox>
               <p>

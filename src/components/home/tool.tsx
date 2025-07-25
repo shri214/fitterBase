@@ -45,12 +45,18 @@ export const Tool: React.FC = () => {
   };
 
   return (
-    <>
+     <>
       <GlobalStyle />
-      <h1 style={{ textAlign: "center", marginTop: "4rem" }}>
-        Available Tools
-      </h1>
-      <ToolGrid tools={tools} onToolClick={handleToolClick} />
+      <main>
+        <header style={{ textAlign: "center", marginTop: "5rem" }}>
+          <h1>Available Pipe Fitting Tools</h1>
+          <p>Select a tool below to begin your calculation</p>
+        </header>
+
+        <section aria-label="Tool list">
+          <ToolGrid tools={tools} onToolClick={handleToolClick} />
+        </section>
+      </main>
     </>
   );
 };

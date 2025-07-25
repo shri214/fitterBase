@@ -11,9 +11,13 @@ import { calculateMitterCuts } from "../../function/multiMitter";
 const PageWrapper = styled.div`
   padding: 1rem;
   text-align: center;
-  max-width: 1200px;
+  max-width: 60%;
   display: block;
   margin: auto;
+
+   @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 const Heading = styled.h1`
@@ -110,9 +114,9 @@ export const MultiMiter: React.FC = () => {
       <GlobalStyle />
       <PageWrapper>
         <Heading>Multi Cut Miter Calculator</Heading>
-        <p>Marking should be in 8 CL</p>
+        <h3>Marking should be in 8 CL</h3>
         <ImageContainer>
-          <StyledImage src={multiMitterDiagram} alt="multi mitter" />
+          <StyledImage src={multiMitterDiagram} alt="multi mitter" loading="lazy"/>
           {result.cutBack > 0 && result.longCut > 0 && (
             <InfoBox>
               <p>

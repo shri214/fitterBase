@@ -10,15 +10,16 @@ import { toast } from "react-toastify";
 
 
 export const FormWrapper = styled.div`
-  // max-width: 400px;
+  max-width: 60%;
   margin: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     padding: 0.5rem;
+    max-width: 95%;
   }
 `;
 export const InputGroup = styled.div`

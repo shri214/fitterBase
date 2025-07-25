@@ -6,10 +6,10 @@ export const Term: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>FitterBase - Terms and Conditions</title>
+        <title>fitter-base - Terms and Conditions</title>
         <meta
           name="description"
-          content="Read the terms and conditions for using FitterBase. Understand your rights and responsibilities while using our platform."
+          content="Read the terms and conditions for using fitter-base. Understand your rights and responsibilities while using our platform."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourdomain.com/terms" />
@@ -23,7 +23,7 @@ export const Term: React.FC = () => {
           <p>Last Updated: July 19, 2025</p>
 
           <p>
-            Welcome to <strong>FitterBase</strong>. By using this website, you
+            Welcome to <strong>fitter-base</strong>. By using this website, you
             agree to the following terms and conditions. Please read them
             carefully.
           </p>
@@ -45,12 +45,12 @@ export const Term: React.FC = () => {
           <h2>3. Intellectual Property</h2>
           <p>
             All content, including tool logic, design, and branding, is owned by
-            FitterBase. Unauthorized use or reproduction is not allowed.
+            fitter-base. Unauthorized use or reproduction is not allowed.
           </p>
 
           <h2>4. Limitation of Liability</h2>
           <p>
-            FitterBase is not responsible for any direct or indirect losses
+            fitter-base is not responsible for any direct or indirect losses
             resulting from the use of the website or tools. Use it at your own
             risk.
           </p>
@@ -64,7 +64,7 @@ export const Term: React.FC = () => {
           <h2>6. Contact</h2>
           <p>
             For questions regarding these terms, please contact us at:
-            support@fitterbase.com
+            support@fitter-base.com
           </p>
         </div>{" "}
       </div>

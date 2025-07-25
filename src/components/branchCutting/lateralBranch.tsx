@@ -89,12 +89,16 @@ export const LateralBranch: React.FC = () => {
   return (
     <Container>
       <GlobalStyle />
-      <Heading style={{ marginTop: "2em" }}>Lateral {type === "lateral-equal-branch" ? "Equal" : "Un Equal"} Branch Calculator</Heading>
+      <Heading style={{ marginTop: "2em" }}>
+        Lateral {type === "lateral-equal-branch" ? "Equal" : "Un Equal"} Branch
+        Calculator
+      </Heading>
 
       <ImageContainer>
         <StyledImage
           src={type === "lateral-equal-branch" ? lateralEql : lateralUnEql}
           alt="Lateral Branch"
+          loading="lazy"
         />
         {result?.cl && (
           <InfoBox>
@@ -165,7 +169,7 @@ export const LateralBranch: React.FC = () => {
         )}
       </ImageContainer>
 
-      <FormWrapper>
+      <FormWrapper style={{ maxWidth: "99%" }}>
         <InputGroup>
           <Label htmlFor="HeaderOd">Header OD</Label>
           <StyledInput

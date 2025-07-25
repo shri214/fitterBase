@@ -14,6 +14,7 @@ import { Branch } from "./components/branchCutting/branch";
 import { EqualBranch } from "./components/branchCutting/equalBranch";
 import { UnEqualBranch } from "./components/branchCutting/unequalBranch";
 import { LateralBranch } from "./components/branchCutting/lateralBranch";
+import { Footer } from "./commonComponents/footer";
 
 export const App = () => {
   return (
@@ -67,6 +68,7 @@ export const App = () => {
           element={<LateralBranch />}
         />
       </Routes>
+      <Footer />
     </>
   );
 };

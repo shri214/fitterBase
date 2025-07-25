@@ -25,6 +25,7 @@ export const SingleMitter: React.FC = () => {
     e.preventDefault(); 
     if(elbowDegree<=0){
       toast.error("elbow degree must be > 0");
+      return;
     }
     try {
       const { lcb, scb } = calculateMitterValues(pipeSize, elbowDegree);

@@ -7,8 +7,17 @@ export const ToolGrid: React.FC<ToolGridProps> = ({ tools, onToolClick }) => {
   return (
     <Grid>
       {tools.map((tool) => (
-        <Card key={tool.slug} onClick={() => onToolClick(tool.slug)}>
-          {tool.icon && <CardImage src={tool.icon} alt={tool.name} />}
+        <Card
+          key={tool.slug}
+          onClick={() => onToolClick(tool.slug)}
+          aria-label={`Go to ${tool.name}`}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && onToolClick(tool.slug)}
+        >
+          {tool.icon && (
+            <CardImage src={tool.icon} alt={tool.name} loading="lazy" />
+          )}
           <h3>{tool.name}</h3>
         </Card>
       ))}

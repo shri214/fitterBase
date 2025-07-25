@@ -6,21 +6,38 @@ export const About: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>FitterBase - About Us</title>
+        <title>About Us | FitterBase - Pipe & Fabrication Tools</title>
         <meta
           name="description"
-          content="Learn more about FitterBase — our mission, vision, and the team behind the platform empowering fitters and professionals."
+          content="Discover FitterBase – a free platform offering accurate tools for pipe fitting, elbow cutting, and fabrication calculations. Learn about our mission and vision."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://yourdomain.com/about" />
+
+        <meta property="og:title" content="About Us | FitterBase" />
+        <meta
+          property="og:description"
+          content="Learn about FitterBase's mission to empower fitters with free tools for pipe fitting and fabrication calculations."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourdomain.com/about" />
+        <meta property="og:image" content="https://yourdomain.com/logo.jpg" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | FitterBase" />
+        <meta
+          name="twitter:description"
+          content="Explore the story behind FitterBase – free tools for fabrication, pipe layout, and more."
+        />
+        <meta name="twitter:image" content="https://yourdomain.com/logo.jpg" />
       </Helmet>
 
       <GlobalStyle />
       <div style={{ marginTop: "6rem" }}>
         <div style={{ padding: "1rem" }}>
-          <h1>About FitterBase</h1>
+          <h1>About fitter-base</h1>
           <p>
-            FitterBase is a dedicated platform created to help mechanical
+            fitter-base is a dedicated platform created to help mechanical
             fitters, engineers, and students perform essential calculations
             quickly and accurately. Whether you're in the workshop or on-site,
             our tools are built to assist with daily fabrication tasks.
@@ -31,7 +48,7 @@ export const About: React.FC = () => {
             fitting, and more.
           </p>
           <p>
-            Designed with simplicity and responsiveness in mind, FitterBase is
+            Designed with simplicity and responsiveness in mind, fitter-base is
             100% free to use and continuously improving based on your feedback.
           </p>
           <p>

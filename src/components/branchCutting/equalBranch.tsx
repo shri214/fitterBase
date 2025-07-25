@@ -104,12 +104,12 @@ export const EqualBranch: React.FC = () => {
   }, [selectedType]);
 
   return (
-    <Container>
+    <Container >
       <GlobalStyle />
       <Heading style={{ marginTop: "2em" }}>Equal Branch Calculator</Heading>
 
       <ImageContainer>
-        <StyledImage src={equalBranchImg} alt="equal branch" />
+        <StyledImage src={equalBranchImg} alt="equal branch"  loading="lazy"/>
         {result?.cl && (
           <InfoBox>
             <p>
@@ -154,7 +154,7 @@ export const EqualBranch: React.FC = () => {
           Header Half OD – √(Header Half OD² – ( Sin(∅) × Branch Half ID)²)
         </CheckboxLabel>
       </CheckboxGroup>
-      <FormWrapper>
+      <FormWrapper style={{maxWidth:"99%"}}>
         {selectedType === "newFormula" && (
           <InputGroup>
             <Label htmlFor="HeaderOd">Header OD</Label>

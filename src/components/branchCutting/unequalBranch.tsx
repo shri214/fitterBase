@@ -112,7 +112,7 @@ export const UnEqualBranch: React.FC = () => {
       <Heading style={{ marginTop: "2em" }}>Un-Equal Branch Calculator</Heading>
 
       <ImageContainer>
-        <StyledImage src={unequalBranchImg} alt="equal branch" />
+        <StyledImage src={unequalBranchImg} alt="equal branch" loading="lazy" />
         {result?.cl && (
           <InfoBox>
             <p>
@@ -157,7 +157,7 @@ export const UnEqualBranch: React.FC = () => {
           Header Half OD – √(Header Half OD² – ( Sin(∅) × Branch Half ID)²)
         </CheckboxLabel>
       </CheckboxGroup>
-      <FormWrapper>
+      <FormWrapper style={{maxWidth:"99%"}}>
         <InputGroup>
           <Label htmlFor="HeaderOd">Header OD</Label>
           <StyledInput

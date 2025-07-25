@@ -24,7 +24,6 @@ const tools = [
 export const MitterTool: React.FC = () => {
   const navigation = useNavigate();
   const handleToolClick = (slug: string) => {
-    console.log(`Tool clicked: ${slug}`);
     navigation(`${slug}`);
   };
 
